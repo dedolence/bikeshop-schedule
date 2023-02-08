@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <!--
+      //    This is the third or fourth main build of this schedule. This project was my way
+      //  to learn the full stack of web application development. It is Javascript-based,
+      //  with minimal PHP backend to interface with the MySQL databases. The main priority
+      //  with this project is to keep strict separation of jobs - the PHP simply maintains
+      //  the database, the javascript processes all the data, the CSS and HTML mark it up
+      //  for display. I avoided inline methods to maintain semantic discretion between
+      //  markup and code. 
+
+      //    Within the JS, the goal was, obviously, speed - but not in terms of page load time,
+      //  which is a trivial concern, but in the actual usage. Accuracy and completion are
+      //  the main priorities, and therefore it seemed paramount to minimize clicks. Currently
+      //  the system in place is a simple spreadsheet, and I thought a similar layout (tabbing
+      //  through each field) was the simplest/quickest approach. Since the spreadsheet was 
+      //  basically the exact method I was striving for, I had to answer the question: why
+      //  bother creating a new program? Short answer: excuse to have a project to learn. But
+      //  the Google spreadsheet program is bloated for our purposes, it's slow and requires
+      //  manually creating pre-formatted sections to enter in entries, and it gets sloppy
+      //  quickly. 
+
+      //  
+    -->
+    <script src="schedule.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="optionsStyles.css">
+    <link rel="stylesheet" href="headerStyles.css">
+  </head>
+  
+  <body>
+
+    <div id="dotBorder">&nbsp;</div>
+
+    <nav id="col1" class="leftNav">
+      <div class="nav"><a href="#current" class="textLink">Jump to Today</a></div>
+      <button class="nav" id="searchButton">Search</div>
+    </nav>
+
+    <main id="col2">
+
+      <nav id="topNav" class="loadNav">
+        <div id="loadPastMonth" class="nav">↑↑ Load Past 4 Weeks ↑↑</div>
+        <div id="loadPastWeek" class="nav">↑ Load Past 1 Week ↑</div>
+      </nav>
+
+      <div id="container" class="container">
+        <a name="current" id="current"></a>
+      </div>
+
+      <nav id="bottomNav" class="loadNav">
+        <div id="loadNextWeek" class="nav">↓ Load Future 1 Week ↓</div>
+        <div id="loadNextMonth" class="nav">↓↓ Load Future 4 weeks ↓↓</div>
+      </nav>
+
+      <aside id="searchModal" class="container">
+        <div id="navClose" class="nav">Return to schedule</div>
+        <div id="searchForm" class="day">
+          <h1>Enter any of the following to search the database:</h1><br /></div>
+        <div id="results"></div>
+      </aside>
+
+    </main>
+
+    <img src="spinner.gif" width="64" height="64" id="spinner">
+  </body>
+  
+</html>

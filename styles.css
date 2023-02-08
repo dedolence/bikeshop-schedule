@@ -1,0 +1,263 @@
+/*---------------------------------------
+WHOLE PAGE STYLES
+---------------------------------------*/
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+  font-family: sans-serif;
+  background: url("gplaypattern_@2X.png") repeat fixed 0 0;
+}
+
+.textLink {
+  text-decoration: none;
+  color: black;
+}
+
+.textLink:visited {
+  color: black;
+}
+
+#spinner {
+  z-index: 1;   /* keep spinner on top */
+  position: fixed;
+  left: 50%;
+  right: 50%;
+  top: 50%;
+  bottom: 50%;
+  visibility: hidden;
+}
+
+#col1 {
+  position: fixed;
+  width: 150px;
+  padding-left: 1%;
+  padding-right: 1%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;    /* spreads the buttons out across the whole column */
+  /*border-right: 3px dotted black;*/
+  /*outline: 50px dotted gray;*/
+  background-color: rgba(8, 8, 8, 0.15);
+  z-index: 2;
+}
+
+#dotBorder {
+  position: fixed;
+  width: 152px;
+  height: 100%;
+  border-right: 5px dotted rgba(00, 00, 00, 0.5);
+  z-index: 1;
+}
+
+#col2 {
+  width: 100%;
+  padding-left: 150px;
+  height: 100%;
+  position: absolute;   /* allows scrolling, unlike fixed position */
+  top: 0px;
+  z-index: 0;
+}
+
+#searchModal {
+  display: none;
+}
+
+/*---------------------------------------
+NAVIGATIONAL BUTTONS, SEARCH FORM
+---------------------------------------*/
+
+#col1>button::-moz-focus-inner {
+  border: 0;
+}
+
+.nav {
+  cursor: pointer;
+  text-align: center;
+  padding: 3px 5px;
+  border: 1pt solid black;
+  margin: 5px;
+  background-color: white;
+  transition-property: background-color;
+  transition-duration: 0.25s;
+}
+
+.nav:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+#searchClose {
+  width: 200px;
+  float: right;
+  margin: 10px;
+}
+
+.disabled {
+  border: 1pt dotted gray;
+  background-color: rgba(8, 8, 8, 0.15);
+}
+
+/*---------------------------------------
+ENTRY CONTAINER STYLING, ACTION BUTTONS
+---------------------------------------*/
+.day {
+  padding: 0px;
+  margin: 20px 0px;
+  background-color: white;
+  border-style: dotted;
+  border-width: 2px;
+  border-left: none;
+  box-shadow: 3px 3px 20px 1px lightgray;
+}
+
+.active {
+  position: relative;
+  z-index: 1;
+  box-shadow: 0px 0px 5px 2px gray;
+}
+
+.closed {
+  margin: 20px 0px;
+  background-color: rgba(8, 8, 8, 0.15) !important;
+  border: 2px dotted black;
+  border-left: none;
+}
+
+.entry {
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+}
+
+.entryKey {
+  width: 100%;
+  display: flex;
+  font-style: italic;
+  font-weight: bold;
+  height: 14px;
+  margin-bottom: 3px;
+  margin-left: 5px;
+}
+
+.entry:hover, .more:hover {
+  outline: 1pt solid black;
+}
+
+.entry:nth-of-type(even):not(.blank) {
+  background-color: #fafafa;
+}
+
+.closed .entry:nth-of-type(even):not(.blank) {
+  background-color: #bbb;
+}
+
+.closed .entry:nth-of-type(odd):not(.blank) {
+  background-color: #ddd;
+}
+
+.blank>input, .blank>select, .blank>textarea {
+  font-style: italic;
+  color: gray;
+}
+
+/*---------------------------------------
+Small element styling, inputs and whatnot
+---------------------------------------*/
+
+/* Span containing entry inputs */
+
+/* Input field styling */
+.detail {
+  font-size: 8pt;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+  border-style: none;
+  background-color: inherit;
+  padding: 2px;
+  vertical-align: top;
+}
+
+::placeholder {
+  font-style: italic;
+  color: gray;
+}
+
+select {
+  -webkit-appearance: none; 
+  -moz-appearance: none;
+  appearance: none;
+  background: url("down.png") right no-repeat;
+  background-size: 14px 14px;
+  border: none;
+}
+
+input:focus {
+  color: black;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.status { width: 10%; }
+
+.type   { width: 8%; }
+
+.name   { width: 12%; }
+
+.email  { width: 17%; }
+
+.phone  { width: 10%; }
+
+.descr  { width: 15%; }
+
+.notes  { 
+  width: 28%;
+  resize: vertical;
+  height: 3em;
+  font-size: 8pt;
+}
+
+.delete { 
+  width: 3%;
+  background-color: rgba(0, 0, 0, 0.0);
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+
+.deleteIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.s-1 {
+  background-color: lightgray;
+}
+
+.s-2 {
+  background-color: tomato;
+  font-weight: bold;
+}
+
+.s-3 {
+  background-color: yellow;
+}
+
+.s-4 {
+  background-color: lime;
+}
+
+.s-5 {
+  background-color: cyan;
+}
+
+.flagged {
+  border: 0.5pt dotted tomato;
+}

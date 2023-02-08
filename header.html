@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <!--
+      //    Static version of the page to play with the header
+    -->
+    <!--<script src="schedule.js"></script>-->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="headerStyles2.css">
+  </head>
+  
+  <body>
+
+    <div id="dotBorder">&nbsp;</div>
+
+    <div id="col1" class="leftNav">
+      <button class="nav" id="loadPastMonth">↑↑ Load Past 4 Weeks</button>
+      <button class="nav" id="loadPastWeek">↑ Load Past 1 Week</button>
+      <button class="nav" id="jumpToToday">Jump to today</button>
+      <button class="nav disabled" id="scheduleButton">Schedule</button>
+      <button class="nav" id="searchButton">Search</button>
+      <button class="nav" id="loadNextWeek">Load Future 1 Week ↓</button>
+      <button class="nav" id="loadNextMonth">Load Future 4 weeks ↓↓</button>
+    </div>
+    
+    <main id="col2">
+
+      <div id="container" class="container">
+        <a name="current" id="current"></a>
+        <div id="2018-12-10" class="day">
+
+
+            <header class="options">
+  
+              <div class="option-t option-item"><h1>Mon 12/10/18</h1></div>
+              <div class="option-a option-item">
+                  <button class="${date}-option option-on" value="0" name="CLOSED">OPEN</button>
+              </div>
+              <div class="option-b option-item">
+                  <button class="${date}-option option-off" value="1" name="CLOSED">CLOSED</button>
+              </div>
+              <div class="option-c option-item">
+                  <button class="${date}-option option-on" value="0" name="FLOW">SCHEDULE</button>
+              </div>
+              <div class="option-d option-item">
+                  <button class="${date}-option option-off" value="1" name="FLOW">WALK-IN</button>
+              </div>
+              <div class="option-e option-item">1:00 PM</div>
+              <div class="option-f option-item">6:30 PM</div>
+              <div class="option-g option-item"><textarea placeholder="Notes..."></textarea></div>
+  
+            </header>
+  
+  
+            <main>
+              <div class="entry">
+                <select class="detail status s-1">
+                    <option value="1">Not here</option>
+                  </select>
+                  <select class="detail type">
+                    <option value="1">Tune-up</option>
+                  </select>
+                  <input type="text" class="detail name" value="John Doe">
+                  <input type="text" class="detail email" value="johndoe@gmail.com">
+                  <input type="text" class="detail phone" value="(617) 666-6666">
+                  <input type="text" class="detail descr" value="light blue raleigh">
+                  <textarea class="detail notes">kj jesklje jkes jlsekjeslk eslkj elkjelsj lkej</textarea>
+                  <button class="delete" id="delete-${json.ID}" data-date="${json.DATE}" data-name="${json.NAME}">
+                    <img src="deleteicon.png" class="deleteIcon">
+                  </button>
+              </div>
+              <div class="entry">
+                <select class="detail status s-2">
+                    <option value="1">Here, not done</option>
+                  </select>
+                  <select class="detail type">
+                    <option value="1">Tune-up</option>
+                  </select>
+                  <input type="text" class="detail name" value="Jane Doe">
+                  <input type="text" class="detail email" value="janedoe@gmail.com">
+                  <input type="text" class="detail phone" value="(617) 666-6666">
+                  <input type="text" class="detail descr" value="jsoeij fs">
+                  <textarea class="detail notes">sndkjns kjdn ksjnfkjdsnjfns jdnksjn fjsndj fndks nfskjdfn</textarea>
+                  <button class="delete" id="delete-${json.ID}" data-date="${json.DATE}" data-name="${json.NAME}">
+                    <img src="deleteicon.png" class="deleteIcon">
+                  </button>
+              </div>
+            </main>
+            <footer class="blank entry"></footer>
+          </div>
+      </div>
+    
+    </main>
+
+    <img src="spinner.gif" width="64" height="64" id="spinner">
+  
+  </body>
+  
+</html>

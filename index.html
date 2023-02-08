@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <!--
+      //    This is the third or fourth main build of this schedule. This project was my way
+      //  to learn the full stack of web application development. It is Javascript-based,
+      //  with minimal PHP backend to interface with the MySQL databases. The main priority
+      //  with this project is to keep strict separation of jobs - the PHP simply maintains
+      //  the database, the javascript processes all the data, the CSS and HTML mark it up
+      //  for display. I avoided inline methods to maintain semantic discretion between
+      //  markup and code. 
+
+      //    Within the JS, the goal was, obviously, speed - but not in terms of page load time,
+      //  which is a trivial concern, but in the actual usage. Accuracy and completion are
+      //  the main priorities, and therefore it seemed paramount to minimize clicks. Currently
+      //  the system in place is a simple spreadsheet, and I thought a similar layout (tabbing
+      //  through each field) was the simplest/quickest approach. Since the spreadsheet was 
+      //  basically the exact method I was striving for, I had to answer the question: why
+      //  bother creating a new program? Short answer: excuse to have a project to learn. But
+      //  the Google spreadsheet program is bloated for our purposes, it's slow and requires
+      //  manually creating pre-formatted sections to enter in entries, and it gets sloppy
+      //  quickly. 
+
+      //  
+    -->
+    <script src="schedule.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="headerStyles.css">
+  </head>
+  
+  <body>
+
+    <div id="dotBorder">&nbsp;</div>
+
+    <div id="col1" class="leftNav">
+      <button class="nav" id="loadPastMonth">↑↑ Load Past 4 Weeks</button>
+      <button class="nav" id="loadPastWeek">↑ Load Past 1 Week</button>
+      <button class="nav" id="jumpToToday">Jump to today</button>
+      <button class="nav disabled" id="scheduleButton">Schedule</button>
+      <button class="nav" id="searchButton">Search</button>
+      <button class="nav" id="loadNextWeek">Load Future 1 Week ↓</button>
+      <button class="nav" id="loadNextMonth">Load Future 4 weeks ↓↓</button>
+    </div>
+    
+    <main id="col2">
+
+      <div id="container" class="container">
+        <a name="current" id="current"></a>
+      </div>
+      
+      <aside id="searchModal" class="container">
+        <div id="navClose" class="nav">Return to schedule</div>
+        <div id="searchForm" class="day">
+          <h1>Enter any of the following to search the database:</h1><br />
+          <div class="blank entry">
+            <input type="text" class="detail name searchInput" placeholder="Name..." autocomplete="off">
+            <input type="email" class="detail email searchInput" placeholder="Email..." autocomplete="off">
+            <input type="tel" class="detail phone searchInput" placeholder="Phone..." autocomplete="off">
+            <input type="text" class="detail descr searchInput" placeholder="Bike description..." autocomplete="off">
+            <textarea class="detail notes searchInput" placeholder="Notes..." autocomplete="off"></textarea>
+            <input type="button" class="nav" value="Search..." id="searchSubmit">
+          </div>
+        </div>
+        <div id="results"></div>
+      </aside>
+    
+    </main>
+
+    <img src="spinner.gif" width="64" height="64" id="spinner">
+  
+  </body>
+  
+</html>

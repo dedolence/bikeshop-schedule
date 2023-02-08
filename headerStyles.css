@@ -1,0 +1,82 @@
+
+header h1 {
+  font-size: 32px;
+  font-family: monospace;
+  display: inline;
+}
+
+header button {
+    background-color: transparent;
+    border: none;
+}
+
+header select {
+    padding-right: 10px;
+}
+
+header textarea {
+    width: 100%;
+    height: 3em;
+    border: none;
+    background-color: transparent;
+}
+
+.option-on {
+  font-size: 10pt;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.option-off {
+  font-size: 8pt;
+  text-decoration: none;
+  font-weight: lighter;
+  color: gray;
+  cursor: pointer;
+}
+
+.options {
+    display: grid;
+    grid-template-areas: 
+        "t a c e g"
+        "t b d f g";
+    grid-template-rows: 20px 20px;
+    grid-template-columns: 3fr 1fr 1fr 1fr 3fr;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.option-item {
+    position: relative;
+    padding-left: 20px;
+    border-right: 1pt dotted lightgray;
+}
+
+.option-t {
+    grid-area: t;
+}
+.option-a {
+    grid-area: a;
+}
+.option-b {
+    grid-area: b;
+}
+.option-c {
+    grid-area: c;
+}
+.option-d {
+    grid-area: d;
+}
+.option-e {
+    grid-area: e;
+}
+.option-f {
+    grid-area: f;
+}
+.option-g {
+    grid-area: g;
+}
+.option-a:hover, .option-b:hover, .option-c:hover, .option-d:hover {
+    background-color: #ddd;
+}
